@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Boss | Restaurante Premium</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- BOTÃO FLUTUANTE PARA ABRIR O MENU -->
+    <button class="menu-toggle" id="open-menu" aria-label="Abrir Menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+
+    <!-- PALETA DE NAVEGAÇÃO LATERAL (ESCONDIDA POR PADRÃO) -->
+    <aside class="sidebar" id="sidebar">
+        <button class="close-menu" id="close-menu">&times;</button>
+        <div class="logo">
+            <h2>O Boss</h2>
+            <span>Alta Gastronomia</span>
+        </div>
+        <nav class="nav-menu">
+            <a href="#home" class="nav-link">Início</a>
+            <a href="#sobre" class="nav-link">O Conceito</a>
+            <a href="#delivery" class="nav-link">Menu & Pedidos</a>
+            <a href="#reserva" class="nav-link">Reservar Mesa</a>
+            <a href="#blog" class="nav-link">O Nosso Blog</a>
+        </nav>
+        <div class="sidebar-footer">
+            <p>Luanda, Angola</p>
+        </div>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL (FLUXO CONTÍNUO) -->
+    <main class="main-content">
+        
+        <!-- SEÇÃO 1: INÍCIO (HERO) -->
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <span class="subtitle">Sabor, Prestígio e Tradição</span>
+                <h1 class="main-title">A Nova Realeza da Cozinha Angolana</h1>
+                <p class="description">Um refúgio gastronómico em Luanda onde ingredientes ancestrais encontram técnicas contemporâneas de alta culinária.</p>
+                <div class="hero-buttons">
+                    <a href="#delivery" class="btn-premium gold-bg">Ver Menu</a>
+                    <a href="#reserva" class="btn-premium">Reservar Mesa</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 2: O CONCEITO (SOBRE) -->
+        <section id="sobre" class="content-section">
+            <div class="section-container">
+                <span class="section-tag">A Nossa Essência</span>
+                <h2 class="section-title">Onde a Tradição se Torna Arte</h2>
+
+                 <div class="sobre-imagem-container">
+                <img src="fotos/1780274936577.jpg" alt="Restaurante O Boss">
+                </div>
+
+                <div class="grid-two-cols">
+                    <div class="text-block">
+                        <p>No **O Boss**, cada prato conta uma história. Honramos as nossas raízes angolanas selecionando rigorosamente os melhores produtos da nossa terra e do nosso mar, elevando o Mufete, o Calulu e o Funge a um patamar de sofisticação nunca antes visto.</p>
+                    </div>
+                    <div class="text-block">
+                        <p>Nosso ambiente foi desenhado para quem aprecia a exclusividade. Um serviço impecável, uma garrafeira selecionada e uma atmosfera que celebra o melhor de Angola com o requinte que você merece.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+                <!-- SECÇÃO EXPERIÊNCIA EM CASA -->
+<section class="experiencia-casa">
+  <div class="container">
+    <p class="subtitle">EXPERIÊNCIA EM CASA</p>
+    <h2 class="title">O Requinte do Boss na Sua Mesa</h2>
+    <p class="description">
+      Transforme a sua sala num restaurante de alta gastronomia. Desfrute das nossas criações exclusivas com a mesma excelência, sofisticação e sabor, no conforto do seu lar.
+    </p>
+
+    <div class="cards-grid">
+      <!-- Card 1 -->
+      <div class="card-prato">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800" alt="Mufete Gourmet">
+          <span class="tag">Mais Pedido</span>
+        </div>
+        <div class="card-content">
+          <h3>Mufete Real O Boss</h3>
+          <p>Peixe grelhado no carvão, feijão de óleo de palma, banana pão e mandioca selecionada.</p>
+          <div class="card-footer">
+            <span class="price">28.000 Kz</span>
+            <a href="#pedir" class="btn-card">Encomendar</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card-prato">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?q=80&w=800" alt="Calulu de Lagosta">
+          <span class="tag">Exclusivo</span>
+        </div>
+        <div class="card-content">
+          <h3>Calulu Executivo de Lagosta</h3>
+          <p>Lagosta fresca com rama de mandioca tradicional e um toque de sofisticação do Chef.</p>
+          <div class="card-footer">
+            <span class="price">35.000 Kz</span>
+            <a href="#pedir" class="btn-card">Encomendar</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card-prato">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800" alt="Funge Gourmet">
+        </div>
+        <div class="card-content">
+          <h3>Funge Premium de Carne Seca</h3>
+          <p>Acompanhado com molho especial de jindungo e hortaliças selecionadas ao detalhe.</p>
+          <div class="card-footer">
+            <span class="price">24.000 Kz</span>
+            <a href="#pedir" class="btn-card">Encomendar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+                
+          <!-- SECÇÃO GALERIA -->
+<section id="galeria" class="seccao-premium">
+    <div class="container-premium">
+        <span class="subtitulo-premium">AQUI HABITA A ELEGANCIA E SOFISTICAÇÃO</span>
+        <h2 class="titulo-premium">O Que Nos Diferencia</h2>
+        
+        <div class="galeria-grid">
+            <div class="galeria-item">
+                <img src="come/1776760040430.jpg" alt="Mufete Real O Boss">
+                <div class="galeria-overlay">
+                    <span>Gastronomia de Alta qualidade.</span>
+                </div>
+            </div>
+            <div class="galeria-item">
+                <img src="fotos/1780274776260.jpg" alt="Espaço VIP O Boss">
+                <div class="galeria-overlay">
+                    <span>Esperiência Premium</span>
+                </div>
+            </div>
+            <div class="galeria-item">
+                <img src="fotos/1780274780599.jpg" alt="Calulu de Lagosta">
+                <div class="galeria-overlay">
+                    <span>ELEGANCIA E SOFISTICAÇÃO</span>
+                </div>
+            </div>
+            <div class="galeria-item">
+                <img src="fotos/1780274773912.jpg" alt="Chef O Boss em Ação">
+                <div class="galeria-overlay">
+                    <span>PREÇARIO TOTALMENTE CESSIVEL</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        <!-- SEÇÃO 4: RESERVA DE MESAS -->
+        <section id="reserva" class="content-section">
+            <div class="section-container compact-width">
+                <span class="section-tag">Exclusividade</span>
+                <h2 class="section-title">Assegure a sua Mesa</h2>
+                <p class="section-subtitle">Salão Principal ou Área Lounge Privé. Lugares estritamente limitados.</p>
+                
+                <form class="premium-form" id="form-reserva">
+                    <div class="form-group">
+                        <input type="text" placeholder="Seu Nome Completo" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="date" required>
+                        <input type="time" required>
+                    </div>
+                    <div class="form-group">
+                        <select aria-label="Número de Convidados" required>
+                            <option value="" disabled selected>Número de Convidados</option>
+                            <option value="2">2 Pessoas (Jantar Intimista)</option>
+                            <option value="4">4 Pessoas (Negócios/Família)</option>
+                            <option value="6">Área VIP Executiva (6+ Pessoas)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-premium gold-bg full-width">Solicitar Reserva Premium</button>
+                </form>
+            </div>
+            </section>
+
+        <!-- SEÇÃO 5: BLOG -->
+        <section id="blog" class="content-section dynamic-bg">
+            <div class="section-container">
+                <span class="section-tag">Cultura & Sabores</span>
+                <h2 class="section-title">Crónicas d'O Boss</h2>
+                
+                <div class="blog-grid">
+                    <article class="blog-card">
+                        <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80')"></div>
+                        <div class="blog-content">
+                            <span class="blog-date">19 Julho, 2026</span>
+                            <h3>A Seleção do Peixe na Ilha de Luanda</h3>
+                            <p>Acompanhe a jornada diária do nosso Chef ao amanhecer para garantir a melhor matéria-prima do Atlântico...</p>
+                            <a href="#" class="read-more">Ler Crónica →</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card">
+                        <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80')"></div>
+                        <div class="blog-content">
+                            <span class="blog-date">12 Julho, 2026</span>
+                            <h3>Harmonização: Vinhos e Pratos de Palma</h3>
+                            <p>Como quebrar a intensidade do óleo de palma com a escolha ideal de vinhos brancos estruturados e tintos leves...</p>
+                            <a href="#" class="read-more">Ler Crónica →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+
+
+
+<!-- SECÇÃO CONTACTO -->
+<section id="contacto" class="seccao-premium fundo-alternativo">
+    <div class="container-premium">
+        <span class="subtitulo-premium">LOCALIZAÇÃO E HORÁRIOS</span>
+        <h2 class="titulo-premium">Visite o Nosso Refúgio</h2>
+        
+        <div class="contacto-wrapper">
+            <!-- Informações Úteis -->
+            <div class="contacto-info">
+                <div class="info-bloco">
+                    <h3>Onde Estamos</h3>
+                    <p>Ilha de Luanda, Angola</p>
+                    <p class="detalhe-dourado">Av. Murtala Mohamed, nº 120</p>
+                </div>
+                
+                <div class="info-bloco">
+                    <h3>Horário de Funcionamento</h3>
+                    <p>Terça a Domingo: 08:00h – 23:30h</p>
+                    <p>Segunda-feira: Encerrado</p>
+                </div>
+                
+                <div class="info-bloco">
+                    <h3>Contactos Diretos</h3>
+                    <p>Telefone: +244 9XX XXX XXX</p>
+                    <p>E-mail: reservas@oboss.ao</p>
+                </div>
+            </div>
+
+            <!-- Formulário Minimalista Executivo -->
+            <form class="contacto-form">
+                <div class="grupo-input">
+                    <input type="text" placeholder="Seu Nome" required>
+                </div>
+                <div class="grupo-input">
+                    <input type="email" placeholder="Seu E-mail" required>
+                </div>
+                <div class="grupo-input">
+                    <textarea placeholder="Mensagem ou Pedido Especial" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="botao-premium">ENVIAR MENSAGEM</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- SECÇÃO REDES SOCIAIS (Adicionar antes do Rodapé) -->
+<section class="social-section">
+  <div class="container">
+    <h3>Siga o Nosso Universo Gastronómico</h3>
+    <p>Acompanhe bastidores, lançamentos de menus e momentos exclusivos nas nossas redes.</p>
+    
+    <div class="social-links">
+      <a href="#" class="social-btn instagram" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+        <span>Instagram</span>
+      </a>
+      <a href="#" class="social-btn facebook" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+        <span>Facebook</span>
+      </a>
+      <a href="#" class="social-btn whatsapp" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span>WhatsApp</span>
+      </a>
+      <a href="#" class="social-btn linkedin" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+        <span>LinkedIn</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Restaurante O Boss. Todos os direitos reservados.</p>
+        </div>
+</footer>
+    </main>
+
+    <script src="arquivo.js/script.js"></script>
+</body>
+</html>

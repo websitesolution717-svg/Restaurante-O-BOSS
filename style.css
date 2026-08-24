@@ -1,0 +1,831 @@
+
+:root {
+    --bg-main: #000000;        /* Preto Puro e Absoluto (Fundo) */
+    --bg-secondary: #0c0d0e;   /* Um preto curtido/suave para destacar os blocos e cartões */
+    --gold: #d4af37;           /* Dourado Clássico (Sofisticação Angolana) */
+    --gold-light: #f3e5ab;     /* Toque de ouro iluminado para hovers e links */
+    
+    /* SEGREDO DA LEGIBILIDADE NO PRETO */
+    --text-pure: #f5f5f7;      /* Branco Marfim Suave (títulos imponentes sem agredir a visão) */
+    --text-muted: #a1a1a6;     /* Cinza Prateado Fosco (perfeito para descrições longas e parágrafos) */
+    
+    --sidebar-width: 300px;
+    --transition-curve: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-pure);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* BOTÃO DE ABRIR MENU (HAMBÚRGUER) */
+.menu-toggle {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    z-index: 150;
+    background: rgba(17, 28, 39, 0.85);
+    border: 1px solid rgba(197, 160, 89, 0.3);
+    padding: 1rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    backdrop-filter: blur(10px);
+    transition: var(--transition-curve);
+}
+
+.menu-toggle:hover {
+    border-color: var(--gold);
+    box-shadow: 0 0 15px rgba(197, 160, 89, 0.2);
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 2px;
+    background-color: var(--gold);
+    transition: var(--transition-curve);
+}
+
+/* PALETA / MENU LATERAL OCULTO (SLIDE IN) */
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    background-color: #060b10;
+    border-right: 1px solid rgba(197, 160, 89, 0.15);
+    position: fixed;
+    top: 0;
+    left: calc(-1 * var(--sidebar-width)); /* Escondido à esquerda */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 4rem 2.5rem;
+    z-index: 200;
+    transition: var(--transition-curve);
+}
+
+.sidebar.open {
+    left: 0; /* Desliza para dentro da tela */
+}
+
+.close-menu {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: transparent;
+    border: none;
+    color: var(--gold);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.logo h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--text-muted);
+    display: block;
+    margin-top: 5px;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--text-pure);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 300;
+    transition: var(--transition-curve);
+}
+
+.nav-link:hover {
+    color: var(--gold);
+    transform: translateX(8px);
+}
+
+.sidebar-footer {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* CONTEÚDO EM FLUXO CONTÍNUO */
+.main-content {
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+/* Contentor da Imagem (certifique-se de que a tag pai da <img> tem esta classe ou use a tag) */
+.sobre-imagem-container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente caso haja altura definida */
+    padding: 20px;
+    width: 100%;
+}
+
+/* Estilização Avançada da Imagem */
+.sobre-imagem-container img {
+    max-width: 800%;
+    width: 100%;
+    height: 600px;
+    display: block;
+    
+    /* --- Efeitos de Embelezamento Premium --- */
+    border-radius: 12px; /* Cantos suavemente arredondados para um visual moderno */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); /* Sombra profunda para dar tridimensionalidade e destaque no fundo escuro */
+    border: 1px solid rgba(255, 215, 0, 0.15); /* Uma borda dourada ultra-subtil que combina com o requinte do restaurante */
+    
+    /* Transição suave para o efeito de passar o rato (hover) */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Efeito Interativo ao Passar o Rato (Hover) */
+.sobre-imagem-container img:hover {
+    transform: translateY(-5px) scale(1.02); /* Levanta ligeiramente a imagem e faz um zoom subtil */
+    box-shadow: 0 30px 50px rgba(255, 215, 0, 0.1); /* Substitui a sombra por um brilho dourado atmosférico muito leve */
+}
+
+/* SEÇÃO HERO (INÍCIO) */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 2rem 10% 2rem 15%;
+    background:
+    linear-gradient(rgba(0,0,0,0.58), rgba(0,0,0,.58)),
+    url('fotos/1780274926136.jpg') center center / cover no-repeat;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.subtitle {
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    line-height: 1.15;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.description {
+    color: var(--text-muted);
+    font-size: 1.25rem;
+    max-width: 650px;
+    margin-bottom: 3.5rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* BOTÕES PREMIUM */
+.btn-premium {
+    display: inline-block;
+    padding: 1.2rem 2.8rem;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    font-weight: 500;
+    transition: var(--transition-curve);
+    cursor: pointer;
+    background: transparent;
+}
+
+.btn-premium:hover {
+    background-color: var(--gold);
+    color: #000;
+}
+
+.gold-bg {
+    background-color: var(--gold);
+    color: #000;
+}
+
+/* SEÇÕES GENÉRICAS DE CONTEÚDO */
+.content-section {
+    padding: 8rem 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.dynamic-bg {
+    background-color: var(--bg-secondary);
+}
+
+.section-container {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.compact-width {
+    max-width: 650px;
+}
+
+.section-tag {
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+
+.section-subtitle {
+    color: var(--text-muted);
+    margin-top: -2rem;
+    margin-bottom: 4rem;
+}
+
+/* --- Estilos Base Partilhados --- */
+.seccao-premium {
+    padding: 80px 20px;
+    background-color: #0d0d0d; /* Fundo escuro luxuoso */
+    text-align: center;
+    color: #ffffff;
+}
+
+.seccao-premium.fundo-alternativo {
+    background-color: #070707; /* Ligeira variação de tom para quebrar a monotonia */
+}
+
+.container-premium {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.subtitulo-premium {
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: #ffd700; /* O tom dourado da marca */
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.titulo-premium {
+    font-size: 36px;
+    font-family: 'Playfair Display', Georgia, serif; /* Tipografia elegante */
+    margin-bottom: 50px;
+    font-weight: 400;
+}
+
+/* --- ESTILOS DA GALERIA --- */
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.galeria-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    height: 300px;
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Efeito Cortina Dourada/Escura no Hover */
+.galeria-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(255, 215, 0, 0.1));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.galeria-overlay span {
+    color: #ffd700;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+    font-family: 'Playfair Display', serif;
+}
+
+.galeria-item:hover img {
+    transform: scale(1.08); /* Zoom requintado */
+}
+
+.galeria-item:hover .galeria-overlay {
+    opacity: 1;
+}
+
+.galeria-item:hover .galeria-overlay span {
+    transform: translateY(0);
+}
+
+/* --- ESTILOS DE CONTACTO --- */
+.contacto-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 50px;
+    text-align: left;
+    margin-top: 30px;
+}
+
+.info-bloco {
+    margin-bottom: 35px;
+}
+
+.info-bloco h3 {
+    font-size: 20px;
+    color: #ffd700;
+    margin-bottom: 12px;
+    font-family: 'Playfair Display', serif;
+}
+
+.info-bloco p {
+    color: #a0a0a0;
+    line-height: 1.6;
+    margin: 4px 0;
+}
+
+.detalhe-dourado {
+    color: #ffd700 !important;
+    font-weight: 300;
+}
+
+/* Formulário com Inputs Invisíveis Modernos */
+.contacto-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.grupo-input input,
+.grupo-input textarea {
+    width: 100%;
+    padding: 15px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.grupo-input input:focus,
+.grupo-input textarea:focus {
+    border-bottom: 1px solid #ffd700; /* Linha acende em dourado ao clicar */
+}
+
+.contacto-form .botao-premium {
+    background: #ffd700;
+    color: #000000;
+    border: none;
+    padding: 16px 30px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.contacto-form .botao-premium:hover {
+    background: transparent;
+    color: #ffd700;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    outline: 1px solid #ffd700;
+}
+
+/* GRID LAYOUTS */
+.grid-two-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+/* ESTRUTURA DO MENU / PRODUTOS */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+.menu-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(197, 160, 89, 0.08);
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--transition-curve);
+}
+
+.menu-item:hover {
+    border-color: var(--gold);
+    background: rgba(197, 160, 89, 0.03);
+    transform: translateY(-5px);
+}
+
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.menu-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+}
+
+.menu-item p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+}
+
+.price {
+    color: var(--gold-light);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.btn-add {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    padding: 0.8rem;
+    width: 100%;
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition-curve);
+}
+
+.btn-add:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+/* FORMULÁRIOS DE RESERVA */
+.premium-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.premium-form input, .premium-form select {
+    background: var(--bg-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 1.2rem;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    width: 100%;
+    transition: var(--transition-curve);
+}
+
+.premium-form input:focus, .premium-form select:focus {
+    border-color: var(--gold);
+}
+
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.full-width {
+    width: 100%;
+}
+
+/* ESTRUTURA DO BLOG */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+}
+
+.blog-card {
+    background: #060b10;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    overflow: hidden;
+}
+
+.blog-img {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+}
+
+.blog-content {
+    padding: 2.5rem;
+}
+
+.blog-date {
+    color: var(--gold);
+    font-size: 0.8rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.blog-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.blog-content p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.read-more {
+    color: var(--text-pure);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition-curve);
+}
+
+.read-more:hover {
+    color: var(--gold);
+}
+
+/* RESPONSIVIDADE TOTAL (MOBILE & COMPACT DEVICES) */
+@media (max-width: 992px) {
+    .main-title {
+        font-size: 2.8rem;
+    }
+    .hero-section {
+        padding: 2rem 5%;
+    }
+    .grid-two-cols {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .form-row {
+        flex-direction: column;
+    }
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-buttons {
+        flex-direction: column;
+    }
+    .content-section {
+        padding: 5rem 5%;
+    }
+    .section-title {
+        font-size: 2.2rem;
+    }
+}
+
+/* --- SECÇÃO EXPERIÊNCIA EM CASA --- */
+.experiencia-casa {
+  padding: 80px 20px;
+  background-color: #0d0d0d;
+  color: #ffffff;
+  text-align: center;
+}
+
+.experiencia-casa .subtitle {
+  color: #c5a059; /* Tom dourado elegância */
+  font-size: 0.85rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.experiencia-casa .title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.experiencia-casa .description {
+  max-width: 650px;
+  margin: 0 auto 50px auto;
+  color: #b3b3b3;
+  line-height: 1.6;
+}
+
+/* Grid de Cards */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card-prato {
+  background: #181818;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #262626;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-prato:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  border-color: #c5a059;
+}
+
+.card-img {
+  position: relative;
+  height: 220px;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-img .tag {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #c5a059;
+  color: #000;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 5px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.card-content {
+  padding: 25px;
+}
+
+.card-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.card-content p {
+  color: #999;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #282828;
+  padding-top: 15px;
+}
+
+.card-footer .price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #c5a059;
+}
+
+.btn-card {
+  padding: 8px 18px;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #c5a059;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.btn-card:hover {
+  background-color: #c5a059;
+  color: #000;
+}
+
+/* --- SECÇÃO REDES SOCIAIS --- */
+.social-section {
+  background-color: #080808;
+  padding: 60px 20px;
+  text-align: center;
+  border-top: 1px solid #1a1a1a;
+}
+
+.social-section h3 {
+  color: #fff;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.social-section p {
+  color: #888;
+  margin-bottom: 35px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border-radius: 30px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-btn:hover {
+  transform: translateY(-4px);
+  filter: brightness(1.15);
+}
+
+/* Cores Oficiais das Redes */
+.social-btn.instagram {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.social-btn.facebook {
+  background-color: #1877f2;
+}
+
+.social-btn.whatsapp {
+  background-color: #25d366;
+}
+
+.social-btn.linkedin {
+  background-color: #0a66c2;
+}
+
+
+.footer-container {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: var(--bg-secondary);
+    border-top: 1px solid rgba(197, 160, 89, 0.15);
+}
